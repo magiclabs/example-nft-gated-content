@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useMagic } from "../context/MagicProvider";
 import { useEffect, useState } from "react";
 import QRCode from "react-qr-code";
+import styles from "../styles/index.module.css";
   
 export default function Home() {
     const { user } = useUser()
@@ -23,24 +24,52 @@ export default function Home() {
 
         fetchDidToken();
     }, [magic, user]);
+
+    const handleShowUI = async () => {
+        try {
+          // Try to show the magic wallet user interface
+          await magic?.wallet.showUI()
+        } catch (error) {
+          // Log any errors that occur during the process
+          console.error("handleShowUI:", error)
+        }
+    }
   
     return (
-      <div>
+      <div className={styles.mainDiv}>
+        <div className={styles.bigText}><u>Home</u></div>
         {user ? (
             <div className="p-2 flex flex-col w-[40vw] mx-auto">
                 <DisconnectButton />
-                <div style={{ background: 'white', padding: '16px' }}>
-                    <QRCode value={`${process.env.NEXT_PUBLIC_URL}/validate?did=${didToken}`} />
-                </div>
             </div>
         ) : (
             <div className="p-2 text-center">
                 <ConnectButton />
             </div>
         )}
-        <Link href={`/gated?did=${didToken}`}>View Gated Content</Link>
+        { user ? (
+            <div className={styles.bigLink} onClick={handleShowUI}>
+                Open Wallet
+            </div>
+        ) : null}
+        
 
-        <Link href={`${process.env.NEXT_PUBLIC_URL}/validate?did=${didToken}`}>Test Validation</Link>
+        <a href={`/gated?did=${didToken}`}>
+            <div className={styles.bigLink}>
+                View Gated Content
+            </div>
+        </a>
+
+        <a href={`${process.env.NEXT_PUBLIC_URL}/validate?did=${didToken}`}>
+            <div className={styles.bigLink}>
+                Test Validation
+            </div>
+        </a>
+        {didToken ? (
+            <div style={{ background: 'white', padding: '16px', margin: 10 }}>
+                <QRCode value={`${process.env.NEXT_PUBLIC_URL}/validate?did=${didToken}`} />
+            </div>
+        ) : null}
       </div>
     );
   }

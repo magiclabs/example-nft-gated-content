@@ -1,11 +1,16 @@
 import { Magic } from '@magic-sdk/admin';
 const { Web3 } = require("web3");
-
+import styles from "../styles/index.module.css"
   
 export default function Gated() {
     return (
-      <div>
-        <h2>Welcome to the NFT Gated Content!</h2>
+      <div className={styles.mainDiv}>
+        <div className={styles.bigText}><u>Welcome to the Gated Content!</u></div>
+        <a href={"/"}>
+            <div className={styles.bigLink}>
+                Home
+            </div>
+        </a>
       </div>
     );
   }

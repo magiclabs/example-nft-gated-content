@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+.mainDiv {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+.bigText {
+    font-size: 2rem;
+    font-family: "Inter", sans-serif;
+    color: var(--white);
+    font-weight: bold;
+    margin: 10px;
+}
+
+.bigLink {
+    font-size: 2rem;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+    color: var(--white);
+    font-weight: bold;
+    margin: 10px;
+}
+
+.bigLink:hover {
+    color: #d3d3d3;
+}

@@ -1,6 +1,7 @@
 import { useMagic } from "../context/MagicProvider"
 import { useState } from "react"
 import { useUser } from "../context/UserContext"
+import styles from "../styles/index.module.css"
 
 const DisconnectButton = () => {
   const [isLoading, setIsLoading] = useState(false)
@@ -25,13 +26,12 @@ const DisconnectButton = () => {
 
   // Render the button component with the click event handler
   return (
-    <button
-      type="button"
-      className="border border-white font-bold p-2 rounded-md text-color"
+    <div
+      className={styles.bigLink}
       onClick={handleDisconnect}
     >
       {isLoading ? "Disconnecting..." : "Disconnect"}
-    </button>
+    </div>
   )
 }
 

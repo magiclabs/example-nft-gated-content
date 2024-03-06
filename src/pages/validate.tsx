@@ -1,16 +1,23 @@
 import { Magic } from '@magic-sdk/admin';
 const { Web3 } = require("web3");
 import type { InferGetServerSidePropsType } from 'next'
+import styles from "../styles/index.module.css"
 
   export default function Page({
     valid,
   }: InferGetServerSidePropsType<typeof getServerSideProps>) {
     console.log(valid)
-    const validText = valid ? "Valid" : "Not Valid"
+    const validText = valid ? "True" : "False"
     return (
-      <main>
-        <h2>{validText}</h2>
-      </main>
+      <div className={styles.mainDiv}>
+        <div className={styles.bigText}><u>NFT Validator</u></div>
+        <div className={styles.bigText}>Valid: {validText}</div>
+        <a href={"/"}>
+            <div className={styles.bigLink}>
+                Home
+            </div>
+        </a>
+    </div>
     )
   }
   
