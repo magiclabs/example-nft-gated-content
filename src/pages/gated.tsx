@@ -48,7 +48,7 @@ export default function Gated() {
         // Check on-chain if user owns NFT by calling contract with web3
         const nftContract = process.env.NFT_CONTRACT_ADDRESS;
         const tokenId = process.env.NFT_TOKEN_ID;
-        const web3 = new Web3("https://polygon-rpc.com");
+        const web3 = new Web3(process.env.NEXT_PUBLIC_RPC_URL);
         // Reduced ABI for ERC1155 with just balanceOf 
         const nftContractABI = [
             {

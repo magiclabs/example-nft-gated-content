@@ -30,11 +30,9 @@ const MagicProvider = ({ children }: { children: ReactNode }) => {
       console.log("starting to initialize magic")
       const magic = new Magic(process.env.NEXT_PUBLIC_MAGIC_API_KEY || "", {
         network: {
-          rpcUrl: "https://polygon-rpc.com",
-          chainId: 137,
+          rpcUrl: process.env.NEXT_PUBLIC_RPC_URL,
+          chainId: parseInt(process.env.NEXT_PUBLIC_CHAIN_ID),
         },
-        // endpoint: "http://localhost:3014"
-        // endpoint: "https://auth.stagef.magic.link",
       })
       console.log("magic", magic)
 
