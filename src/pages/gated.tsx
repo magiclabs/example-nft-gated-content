@@ -19,6 +19,7 @@ export default function Gated() {
     const { query } = context;
     const didToken = query.did;
     console.log(didToken)
+    
 
     if (!didToken) {
       return {

@@ -1,7 +1,6 @@
 import { useUser } from "../context/UserContext"
 import ConnectButton from "../components/ConnectButton";
 import DisconnectButton from "../components/DisconnectButton";
-import Link from 'next/link'
 import { useMagic } from "../context/MagicProvider";
 import { useEffect, useState } from "react";
 import QRCode from "react-qr-code";
@@ -21,7 +20,7 @@ export default function Home() {
                 setDidToken(null);
             }
         };
-
+        
         fetchDidToken();
     }, [magic, user]);
 
