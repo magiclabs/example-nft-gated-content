@@ -36,7 +36,7 @@ export default function Gated() {
       didToken,
       process.env.NFT_CONTRACT_ADDRESS,
       'ERC1155',
-      new Web3(process.env.NEXT_PUBLIC_RPC_URL),
+      process.env.NEXT_PUBLIC_RPC_URL,
       process.env.NFT_TOKEN_ID
     )
     if (!result.valid) {

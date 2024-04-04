@@ -12,7 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@magic-sdk/admin": "2.2.0",
+    "@magic-sdk/admin": "2.4.0",
     "magic-sdk": "^22.1.0",
     "next": "^14.1.1",
     "react": "^18.2.0",
