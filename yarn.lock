@@ -221,10 +221,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@magic-sdk/admin@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@magic-sdk/admin/-/admin-2.0.1.tgz#eae217a38609b110f889745549bc1d0acde2b179"
-  integrity sha512-pib/7Y/sG7WPg1eOcsRE6Yn2Dsg4Dd/k7Hadw6UUikPSDRImJdwuqXGiSW+G/HLTMkEXtOXutfXv6xYy0IWPaQ==
+"@magic-sdk/admin@2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@magic-sdk/admin/-/admin-2.2.0.tgz#00b174056ebe96ff75852e5f02585f76b4791e76"
+  integrity sha512-L0Gt9vAn068USxYobeh4zOB2L2HRzLWTZSPTYg7I8igjoOzn85WC1qe8uhqN0XgzJZrL3yjwzlfRQK3ALFhO6w==
   dependencies:
     ethereum-cryptography "^1.0.1"
     node-fetch "^2.6.7"
