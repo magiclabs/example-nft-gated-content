@@ -38,7 +38,7 @@ import styles from "../styles/index.module.css"
             didToken,
             process.env.NFT_CONTRACT_ADDRESS,
             'ERC1155',
-            new Web3("https://polygon-rpc.com"),
+            'https://polygon-rpc.com',
             process.env.NFT_TOKEN_ID,
         );
         return {props: {valid: result.valid}}
